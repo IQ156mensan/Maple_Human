@@ -1,0 +1,10 @@
+{
+	"scripts": {
+		"start": "nodemon web.js"
+	},
+	"dependencies": {
+		"axios": "^0.27.2",
+		"cheerio": "^1.0.0-rc.11",
+		"nodemon": "^2.0.18"
+	}
+}
