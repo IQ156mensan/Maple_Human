@@ -1,16 +1,14 @@
 const webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
+const chromedriver = require('chromedriver');
 
-
-
-
-
+chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
 
 
 async function test() {
-
-    let driver = await new webdriver.Builder().forBrowser(webdriver.Browser.FIREFOX).build();
-
+    var driver = new webdriver.Builder()
+        .withCapabilities(webdriver.Capabilities.chrome())
+        .build();
     driver.get("https://maplestory.nexon.com/Authentication/Login#a")
 }
 
