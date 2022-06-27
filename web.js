@@ -1,15 +1,22 @@
+
+
+const chromium = require('chromium');
+const chromedriver = require('chromedriver');
 const webdriver = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
-const chromedriver = require('chromedriver');
-
 chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
 
 
 async function test() {
-    var driver = new webdriver.Builder()
-        .withCapabilities(webdriver.Capabilities.chrome())
+    let options = new chrome.Options();
+    options.setChromeBinaryPath(chromium.path);
+    options.addArguments('--disable-gpu');
+
+    const driver = await new webdriver.Builder()
+        .forBrowser('chrome')
+        .setChromeOptions(options)
         .build();
-    driver.get("https://maplestory.nexon.com/Authentication/Login#a")
+    await driver.get("https://maplestory.nexon.com/Authentication/Login#a")
 }
 
 

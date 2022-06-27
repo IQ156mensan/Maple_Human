@@ -5,8 +5,10 @@
 	"dependencies": {
 		"axios": "^0.27.2",
 		"cheerio": "^1.0.0-rc.11",
-		"chromedriver": "^103.0.0",
+		"chromedriver": "103.0.0",
+		"chromium": "^1.0.3",
 		"nodemon": "^2.0.18",
-		"selenium-webdriver": "^4.3.0"
+		"selenium-webdriver": "^4.3.0",
+		"webdriver-manager": "^12.1.8"
 	}
 }
