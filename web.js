@@ -10,8 +10,9 @@ chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
 async function test() {
     let options = new chrome.Options();
     options.setChromeBinaryPath(chromium.path);
+    options.addArguments('--headless');
     options.addArguments('--disable-gpu');
-
+    
     const driver = await new webdriver.Builder()
         .forBrowser('chrome')
         .setChromeOptions(options)
